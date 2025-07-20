@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/oauth2/idpresponse",
+      "destination": "/"
+    }
+  ]
+}
