@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom/client'
 import { Amplify } from 'aws-amplify'
 import awsExports from './aws-exports'
 import App from './App'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import OAuth2Redirect from './OAuth2Redirect'
 
 // 1. Mostrar en consola las env vars clave
 console.log('【ENV】', {
@@ -36,6 +38,11 @@ console.log('✅ Amplify configured')
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/oauth2/idpresponse" element={<OAuth2Redirect />} />
+        <Route path="*" element={<App />} />
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 )
