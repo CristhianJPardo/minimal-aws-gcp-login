@@ -93,6 +93,8 @@ export default function App() {
     console.log('🌐 handleGoogleSignIn: iniciando flujo OAuth')
     console.log('▶️ redirigir a:', import.meta.env.VITE_COGNITO_OAUTH_DOMAIN)
     signInWithRedirect({ provider: 'Google' })
+    console.log('🌍 window.location.origin:', window.location.origin)
+    console.log('🌍 VITE_REDIRECT_SIGN_IN:', import.meta.env.VITE_REDIRECT_SIGN_IN)
   }
 
   if (user) {
